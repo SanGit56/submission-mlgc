@@ -20,9 +20,9 @@ async function predictClassification(model, image) {
  
         let suggestion;
 
-        // if (confidenceScore <= 50) {
-        //   label = "Non-cancer";
-        // }
+        if (confidenceScore <= 50) {
+          label = "Non-cancer";
+        }
  
         if(label === 'Cancer') {
           suggestion = "Segera periksa ke dokter!"
