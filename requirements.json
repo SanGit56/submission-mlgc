@@ -1,6 +1,6 @@
 {  
- "backend-service-url": "<isi dengan url backend Anda>",
- "frontend-service-url": "<isi dengan url frontend Anda>",
- "project-id": "<isi dengan project ID Google Cloud Project Anda>",
+ "backend-service-url": "http://34.101.182.46:3000/",
+ "frontend-service-url": "http://submissionmlgc-radhiyanhisan.et.r.appspot.com/",
+ "project-id": "submissionmlgc-radhiyanhisan",
  "bucket-name": "<isi dengan nama bucket yang menyimpan model Anda>"
 }

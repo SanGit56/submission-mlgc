@@ -9,27 +9,27 @@ async function predictClassification(model, image) {
             .expandDims()
             .toFloat()
  
-        const classes = ["Cancer", "Non-cancer"];
- 
         const prediction = model.predict(tensor);
         const score = await prediction.data();
         const confidenceScore = Math.max(...score) * 100;
  
+        const classes = ["Cancer", "Non-cancer"];
+ 
         const classResult = tf.argMax(prediction, 1).dataSync()[0];
         const label = classes[classResult];
- 
-        let suggestion;
 
         if (confidenceScore <= 50) {
           label = "Non-cancer";
         }
  
+        let suggestion;
+ 
         if(label === 'Cancer') {
-          suggestion = "Segera periksa ke dokter!"
+          suggestion = "Kemungkinan kanker, segera periksa ke dokter!"
         } 
         
         if(label === 'Non-cancer') {
-            suggestion = "Anda sehat!"
+            suggestion = "Tidak perlu khawatir, ini bukan kanker!"
         }
  
         return { label, suggestion };
